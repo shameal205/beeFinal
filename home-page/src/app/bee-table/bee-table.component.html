@@ -1,0 +1,55 @@
+<div class="">
+    <mat-table [dataSource]="dataSource">
+  
+      <ng-container matColumnDef="id">
+        <mat-header-cell *matHeaderCellDef> ID </mat-header-cell>
+        <mat-cell *matCellDef="let user"> {{user.id}} </mat-cell>
+      </ng-container>
+  
+      <ng-container matColumnDef="speed">
+        <mat-header-cell *matHeaderCellDef> Speed </mat-header-cell>
+        <mat-cell *matCellDef="let user"> {{user.speed}} </mat-cell>
+      </ng-container>
+  
+      <ng-container matColumnDef="latitude">
+        <mat-header-cell *matHeaderCellDef> Latitude </mat-header-cell>
+        <mat-cell *matCellDef="let user"> {{user.latitude}} </mat-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="longitude">
+        <mat-header-cell *matHeaderCellDef> Longitude </mat-header-cell>
+        <mat-cell *matCellDef="let user"> {{user.longitude}} </mat-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="altitude">
+        <mat-header-cell *matHeaderCellDef> Altitude </mat-header-cell>
+        <mat-cell *matCellDef="let user"> {{user.altitude}} </mat-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="fuel">
+        <mat-header-cell *matHeaderCellDef> Fuel </mat-header-cell>
+        <mat-cell *matCellDef="let user"> {{user.fuel}} </mat-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="damage">
+        <mat-header-cell *matHeaderCellDef> Damage </mat-header-cell>
+        <mat-cell *matCellDef="let user"> {{user.damage}} </mat-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="nectar">
+        <mat-header-cell *matHeaderCellDef> Nectar </mat-header-cell>
+        <mat-cell *matCellDef="let user"> {{user.nectar}} </mat-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="honey">
+        <mat-header-cell *matHeaderCellDef> Honey </mat-header-cell>
+        <mat-cell *matCellDef="let user"> {{user.honey}} </mat-cell>
+      </ng-container>
+
+  
+      <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+      <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+  
+    </mat-table>
+  </div>
+  
