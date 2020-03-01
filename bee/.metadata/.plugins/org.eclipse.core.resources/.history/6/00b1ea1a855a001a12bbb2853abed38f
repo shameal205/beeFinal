@@ -1,0 +1,18 @@
+package com.bee.simplejdbc.controller;
+
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+// Rest Controller
+
+@RestController
+@RequestMapping(path="/user")
+
+public class UserController {
+	// Test if service is running
+	@GetMapping
+	public String check() {
+		return "Welcome to Java Inspires";
+	}
+}

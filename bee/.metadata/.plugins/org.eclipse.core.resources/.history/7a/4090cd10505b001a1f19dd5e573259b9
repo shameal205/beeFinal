@@ -1,0 +1,5 @@
+package com.bee.simplejdbc.controller;
+
+public class WebSecurityConfig {
+
+}

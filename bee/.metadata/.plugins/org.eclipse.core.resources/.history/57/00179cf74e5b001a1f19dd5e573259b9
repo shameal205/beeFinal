@@ -1,0 +1,65 @@
+package com.bee.simplejdbc.controller;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.bee.simplejdbc.repository.UserRepository;
+
+// Rest Controller
+
+@RestController
+@RequestMapping(path="/hiveMind")
+
+public class UserController {
+	
+	Bee bee = new Bee();
+	
+	//autowiring user repository
+	@Autowired
+	UserRepository userRepository;
+	
+	// Test if service is running
+	// Why was this called?
+	@GetMapping
+	public String check() {
+		return "Welcome to Java Inspires";
+	}
+	
+	// Get a list of all bee tags
+	@GetMapping(path="/getBeeTags")
+	public List<String> getAllBeeTags(){
+		return userRepository.getAllBeeTags();
+	}
+	
+	// Get a list of all bee tags
+	@GetMapping(path="/getBeeTags/{id}")
+	public Bee getBeeTag(@PathVariable("id") String id){
+		return userRepository.getBeeTag(id);
+	}
+	
+	// Add another bee to db
+	@PostMapping(path="/addNewBee")
+	public String addNewBee(List<String> beeList){
+		return userRepository.addNewBee(beeList);
+	}
+	
+	// Update a bee from db
+	@PutMapping(path="/updateBee")
+	public String updateBee(List<String> beeList){
+		return userRepository.updateBee(beeList);
+	}
+	
+	// Remove a bee from db
+	@DeleteMapping(path="/removeBee")
+	public String removeBee(String id){
+		return userRepository.removeBee(id);
+	}
+}

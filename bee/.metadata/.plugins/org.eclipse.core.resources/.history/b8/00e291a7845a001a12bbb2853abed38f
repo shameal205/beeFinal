@@ -1,0 +1,5 @@
+package com.bee.simplejdbc.repository;
+
+public class userRepository {
+
+}

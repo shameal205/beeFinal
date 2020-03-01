@@ -1,0 +1,65 @@
+package com.bee.simplejdbc.repository;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.stereotype.Repository;
+
+@Repository
+public class UserRepository {
+
+	/*
+	 * autowiring jdbc using configured setting in application.properties
+	 * 
+	 */
+	@Autowired
+	JdbcTemplate jdbcTemplate;
+
+	/*
+	 * @return usernameList
+	 * 
+	 */
+	public List<String> getAllBeeTags() {
+		List<String> beeList = new ArrayList<>();
+
+		try {
+			beeList.addAll(jdbcTemplate.queryForList("SELECT * FROM dev_db.beehive where id = 001;", String.class));
+		}catch(Exception e){
+			System.out.println(beeList);
+		}
+		return beeList;
+
+	}
+	
+	public List<String> getBeeTag(String id) {
+		List<String> beeList = new ArrayList<>();
+		beeList.addAll(jdbcTemplate.queryForList("SELECT * FROM dev_db.beehive where id = "+ id +";", String.class));
+		return beeList;
+	}
+
+	public String addNewBee(List<String> beeList) {
+		beeList.addAll(jdbcTemplate.queryForList("INSERT INTO dev_db.beehive (id, speed, latitude, longitude, altitude, fuel, damage, nectar, honey)VALUES ("+
+		beeList.get(0)+","+beeList.get(1)+","+beeList.get(2)+","+beeList.get(3)+","+beeList.get(4)+","+
+		beeList.get(5)+","+beeList.get(6)+","+beeList.get(7)+","+beeList.get(8)+");", String.class));
+		return "Bee #"+ beeList.get(0) +" has been added!";
+	}
+
+	public String updateBee(List<String> beeList) {
+		beeList.addAll(jdbcTemplate.queryForList("INSERT INTO dev_db.beehive (id, speed, latitude, longitude, altitude, fuel, damage, nectar, honey)VALUES ("+
+		beeList.get(0)+","+beeList.get(1)+","+beeList.get(2)+","+beeList.get(3)+","+beeList.get(4)+","+
+		beeList.get(5)+","+beeList.get(6)+","+beeList.get(7)+","+beeList.get(8)+");", String.class));
+		return "Bee #"+ beeList.get(0) +" has been updated!";
+	}
+	
+	public String removeBee(String id) {
+		jdbcTemplate.queryForList("DELETE FROM dev_db.beehive WHERE id = " + id +";", String.class);
+		return "Bee " + id + " has been deleted!";
+	}
+
+
+
+
+
+}

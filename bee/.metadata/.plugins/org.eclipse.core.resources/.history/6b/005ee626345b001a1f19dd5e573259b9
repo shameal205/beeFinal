@@ -1,0 +1,24 @@
+package com.bee.simplejdbc.controller;
+
+public class Bee {
+	
+	String id;
+	String speed;
+	String latitude;
+	String longitude;
+	String fuel;
+	String damage;
+	String nectar;
+	String honey;
+
+	public Bee() {
+		id = "";
+		speed = "";
+		latitude = "";
+		longitude = "";
+		fuel = "";
+		damage = "";
+		nectar = "";
+		honey = "";
+	}
+}
