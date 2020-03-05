@@ -15,17 +15,17 @@ Assuming mysql is not already installed. Go to https://dev.mysql.com/downloads/m
 (Note: look at bee\src\main\resources to verify what the setup should look like)
 3) For creating the table here is the sql code to make it.
 
-	CREATE TABLE `beehive` (
-	  `id` varchar(45) NOT NULL,
-	  `speed` int DEFAULT NULL,
-	  `latitude` int DEFAULT NULL,
-	  `longitude` int DEFAULT NULL,
-	  `altitude` int DEFAULT NULL,
-	  `fuel` int DEFAULT NULL,
-	  `damage` int DEFAULT NULL,
-	  `nectar` int DEFAULT NULL,
-	  `honey` int DEFAULT NULL,
-	  PRIMARY KEY (`id`)
+	CREATE TABLE `beehive` (<br/>
+	  `id` varchar(45) NOT NULL,<br/>
+	  `speed` int DEFAULT NULL,<br/>
+	  `latitude` int DEFAULT NULL,<br/>
+	  `longitude` int DEFAULT NULL,<br/>
+	  `altitude` int DEFAULT NULL,<br/>
+	  `fuel` int DEFAULT NULL,<br/>
+	  `damage` int DEFAULT NULL,<br/>
+	  `nectar` int DEFAULT NULL,<br/>
+	  `honey` int DEFAULT NULL,<br/>
+	  PRIMARY KEY (`id`)<br/>
 	) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci
 
 4) Once completed go to "bees-0.0.1-SNAPSHOT" in the top level of this repo and double click it to start the service.
