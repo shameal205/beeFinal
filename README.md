@@ -28,7 +28,7 @@ To test each API, add the following onto the base "http://localhost:8080/hiveMin
 	
 	/addNewBee(POST) - To add a bee to database.
 	
-  /updateBee(PUT) - To update an individual bee's data.
+  	/updateBee(PUT) - To update an individual bee's data.
 
 	/removeBee(DELETE) - To remove a bee from the database
   
