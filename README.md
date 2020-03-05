@@ -13,8 +13,22 @@ Assuming mysql is not already installed. Go to https://dev.mysql.com/downloads/m
 1) Create a mysql server with your instance set to "localhost:3306", database named "dev_db", and table named "beehive".
 2) Make sure your user credentials are both set to "admin"
 (Note: look at bee\src\main\resources to verify what the setup should look like)
+3) For creating the table here is the sql code to make it.
 
-3) Once completed go to "bees-0.0.1-SNAPSHOT" in the top level of this repo and double click it to start the service.
+	CREATE TABLE `beehive` (
+	  `id` varchar(45) NOT NULL,
+	  `speed` int DEFAULT NULL,
+	  `latitude` int DEFAULT NULL,
+	  `longitude` int DEFAULT NULL,
+	  `altitude` int DEFAULT NULL,
+	  `fuel` int DEFAULT NULL,
+	  `damage` int DEFAULT NULL,
+	  `nectar` int DEFAULT NULL,
+	  `honey` int DEFAULT NULL,
+	  PRIMARY KEY (`id`)
+	) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci
+
+4) Once completed go to "bees-0.0.1-SNAPSHOT" in the top level of this repo and double click it to start the service.
 
 Here the APIs should be running, to test run "curl -H "Content-Type: application/json" http://localhost:8080/hiveMind/addNewBee -d "{\"id\":\"111\",\"speed\":6}""
 (Note: Expect a response of "1")
