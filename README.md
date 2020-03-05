@@ -32,6 +32,9 @@ To test each API, add the following onto the base "http://localhost:8080/hiveMin
 
 	/removeBee(DELETE) - To remove a bee from the database
   
+ Here is the list of variables that be inputted:
+ {"id","speed","latitude","longitude","altitude","fuel","damage","nectar","honey"}
+ 
   Here the back-end should be setup
 Finally to run the UI follow the instructions below.
 
