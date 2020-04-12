@@ -1,6 +1,6 @@
 # beeFinal
 
-For this repo, it is broekn up into two halves: UI end and Backend.
+For this repo, it is broken up into two halves: UI end and Backend.
 
 UI was developed on angular. 
 Backend was developed with Spring boot and MySQL paired together. 
